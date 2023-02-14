@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {   return view('index')->name('Main');});
 
-Route::get('/about-us', function () {   return view('about-us')->name('about');});
+Route::get('/about', [App\Http\Controllers\AllController::class, 'about'])->name('about');
 
-Route::get('/where-to-find-us', function () {   return view('where-to-find-us')->name('where');});
+Route::get('/where', [App\Http\Controllers\AllController::class, 'where'])->name('where');
 
+Route::get('/catalog', [App\Http\Controllers\AllController::class, 'catalog'])->name('catalog');
 
+Route::get('/item', [App\Http\Controllers\AllController::class, 'item'])->name('item');
 
 Auth::routes();
 
