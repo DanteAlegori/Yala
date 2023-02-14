@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +12,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', function () {   return view('index')->name('Main');});
+
+Route::get('/about-us', function () {   return view('about-us')->name('about');});
+
+Route::get('/where-to-find-us', function () {   return view('where-to-find-us')->name('where');});
+
+
 
 Auth::routes();
 

@@ -18,8 +18,8 @@
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="{{ route('login') }}">О нас</a></li>
-      <li><a href="{{ route('login') }}">Где нас найти</a></li>
+      <li><a href="{{ route('about') }}">О нас</a></li>
+      <li><a href="{{ route('where') }}">Где нас найти</a></li>
       <li><a href="{{ route('login') }}">Каталог</a></li>
       @guest
                             @if (Route::has('login'))
