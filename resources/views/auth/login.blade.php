@@ -13,7 +13,8 @@
                 Авторизация
             </h2>
 
-            <form class="mt-10" method="POST">
+            <form class="mt-10" method="POST" action="{{ route('login') }}">
+                       @csrf
                 <!-- Email Input -->
                 <label for="login" class="block text-xs font-semibold text-gray-600 uppercase">Логин</label>
                 <input id="login" type="string" name="login" placeholder="Логин" autocomplete="login"
