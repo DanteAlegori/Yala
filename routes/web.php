@@ -19,7 +19,7 @@ Route::get('/about', [App\Http\Controllers\AllController::class, 'about'])->name
 
 Route::get('/where', [App\Http\Controllers\AllController::class, 'where'])->name('where');
 
-Route::get('/catalog/product/{slug}', [App\Http\Controllers\CatalogController::class, 'product'])->name('catalog.product');
+Route::get('/catalog/product/{id?}', [App\Http\Controllers\CatalogController::class, 'product'])->name('catalog.product');
 
 Auth::routes();
 
