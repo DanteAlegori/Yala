@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CatalogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +19,7 @@ Route::get('/about', [App\Http\Controllers\AllController::class, 'about'])->name
 
 Route::get('/where', [App\Http\Controllers\AllController::class, 'where'])->name('where');
 
-Route::get('/catalog', [App\Http\Controllers\AllController::class, 'catalog'])->name('catalog');
-
-Route::get('/item', [App\Http\Controllers\AllController::class, 'item'])->name('item');
+Route::get('/catalog/product/{slug}', [App\Http\Controllers\CatalogController::class, 'product'])->name('catalog.product');
 
 Auth::routes();
 

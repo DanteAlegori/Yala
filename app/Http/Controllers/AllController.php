@@ -19,17 +19,9 @@ return view('info.where-to-find-us');
 
 }
 
-public function catalog(){
 
-return view('catalog.catalog');
 
-}
 
-public function item(){
-
-return view('catalog.item');
-
-}
 
 
 
