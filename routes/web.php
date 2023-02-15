@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {   return view('index')->name('Main');});
+Route::view('/', 'main')->name('main');
 
 Route::get('/about', [App\Http\Controllers\AllController::class, 'about'])->name('about');
 
