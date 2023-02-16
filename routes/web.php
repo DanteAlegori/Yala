@@ -21,6 +21,8 @@ Route::get('/where', [App\Http\Controllers\AllController::class, 'where'])->name
 
 Route::get('/catalog/product/{id?}', [App\Http\Controllers\CatalogController::class, 'product'])->name('catalog.product');
 
+Route::get('/admin-panel/create-product}', [App\Http\Controllers\CatalogController::class, 'create'])->name('admin-panel.product');
+
 Auth::routes();
 
 Route::get('/logout', [App\Http\Controllers\logoutController::class, 'logout'])->name('logoutProcess');
