@@ -10,15 +10,12 @@ class CatalogController extends Controller
 {
 
 
-    public function product($id = 0)
+    public function product()
     {
-        if ($id == 0) {
-            $products = Product::all();
-            return view('catalog.product', compact('products'));
-        }
 
-        $products = Product::where('category_id', $id)->get();
-        return view('catalog.product', compact('products'));
+            $products = Product::all();
+            return view('catalog.product',['name','content','img','price'], compact('products'));
+
     }
 
     public function create(){

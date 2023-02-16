@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +15,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        DB::table('products')->insert([
+            'name' => 'принтер',
+            'category_id' => '1',
+            'content'  => 'бла бла бла бла',
+            'image'  => '1printer.jpg',
+            'price'  => '600',
+        ],[
+            'name' => 'принтер',
+            'category_id' => '2',
+            'content'  => 'бла бла бла бла',
+            'image'  => '2printer.jpg',
+            'price'  => '600',
+        ],[
+            'name' => 'принтер',
+            'category_id' => '3',
+            'content'  => 'бла бла бла бла',
+            'image'  => '3printer.jpg',
+            'price'  => '600',
+        ],
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+
+    );
     }
 }
