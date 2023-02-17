@@ -18,6 +18,14 @@ class CatalogController extends Controller
 
     }
 
+    public function slider()
+    {
+
+            $products = Product::limit(4)->get();
+            return view('main', compact('products'));
+
+    }
+
     public function create(Request $request){
 
         $imgName = time() . '-' . $request->image->getClientOriginalName();

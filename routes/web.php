@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatalogController;
 /*
@@ -13,7 +14,6 @@ use App\Http\Controllers\CatalogController;
 |
 */
 
-Route::view('/', 'main')->name('main');
 
 Auth::routes();
 
@@ -34,6 +34,7 @@ Route::get('/admin-panel/admin}', [App\Http\Controllers\CatalogController::class
 Route::get('/logout', [App\Http\Controllers\logoutController::class, 'logout'])->name('logoutProcess');
 
 
+Route::get('/slider/{id?}', [App\Http\Controllers\CatalogController::class, 'slider'])->name('main');
 
 
 
