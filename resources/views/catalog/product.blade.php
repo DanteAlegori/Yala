@@ -9,7 +9,7 @@
     <h2 class="card-title text-base-100">{{$product->name}}</h2>
     <p class="text-base-100">{{$product->content}}</p>
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">{{$product->price}}<a href=""></a></button>
+      <button class="btn btn-primary">{{$product->price}}<a href="">Посмотреть детально</a></button>
     </div>
   </div>
 </div>

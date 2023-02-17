@@ -25,8 +25,8 @@
                     required />
 
                  <!--Surname Input -->
-                 <label for="contend" class="block text-xs font-semibold text-gray-600 uppercase">Описание</label>
-                <input id="contend" type="text" name="contend" placeholder="" autocomplete="contend"
+                 <label for="content" class="block text-xs font-semibold text-gray-600 uppercase">Описание</label>
+                <input id="content" type="text" name="content" placeholder="" autocomplete="content"
                     class="block w-full py-3 px-1 mt-2
                     text-gray-800 appearance-none
                     border-b-2 border-gray-100
@@ -35,12 +35,7 @@
 
                  <!-- Patronymic Input -->
                  <label for="img" class="block text-xs font-semibold text-gray-600 uppercase">Название изображения</label>
-                <input id="img" type="string" name="img" placeholder="" autocomplete="img"
-                    class="block w-full py-3 px-1 mt-2
-                    text-gray-800 appearance-none
-                    border-b-2 border-gray-100
-                    focus:text-gray-500 focus:outline-none focus:border-gray-200"
-                    required />
+                 <input type="file" class="file-input file-input-bordered w-full max-w-xs"/>
 
                  <!-- Login Input -->
                  <label for="login" class="block text-xs font-semibold text-gray-600 uppercase">Цена</label>

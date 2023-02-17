@@ -18,10 +18,18 @@ class CatalogController extends Controller
 
     }
 
-    public function create(){
+    public function create(Request $request){
 
-$products = Product::created(['name','contend','image','price']);
-return view('admin-panel.create-product',compact('products'));
+        $imgName = time() . '-' . $request->image->getClientOriginalName();
+        $image = $request->image->move(public_path('img'), $imgName);
+        $products = Product::create(['name' => $request->name, 'content' => $request->content, 'image' => $imgName, 'price' => $request->price]);
+        return view('admin-panel.create-product',compact('products'));
 
+    }
+
+    public function detail($id)
+    {
+        $product = Product::find($id);
+        return view('catalog.one-product', compact('product'));
     }
 }
