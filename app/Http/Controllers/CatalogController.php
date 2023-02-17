@@ -32,4 +32,10 @@ class CatalogController extends Controller
         $product = Product::find($id);
         return view('catalog.one-product', compact('product'));
     }
+
+
+    public function admin()
+    {
+        return view('admin-panel.admin');
+    }
 }
