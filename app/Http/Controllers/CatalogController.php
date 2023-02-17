@@ -14,7 +14,7 @@ class CatalogController extends Controller
     {
 
             $products = Product::all();
-            return view('catalog.product',['name','content','img','price'], compact('products'));
+            return view('catalog.product', compact('products'));
 
     }
 

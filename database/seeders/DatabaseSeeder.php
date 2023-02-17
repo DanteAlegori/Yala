@@ -21,20 +21,7 @@ class DatabaseSeeder extends Seeder
             'content'  => 'бла бла бла бла',
             'image'  => '1printer.jpg',
             'price'  => '600',
-        ],[
-            'name' => 'принтер',
-            'category_id' => '2',
-            'content'  => 'бла бла бла бла',
-            'image'  => '2printer.jpg',
-            'price'  => '600',
-        ],[
-            'name' => 'принтер',
-            'category_id' => '3',
-            'content'  => 'бла бла бла бла',
-            'image'  => '3printer.jpg',
-            'price'  => '600',
-        ],
-
+        ]
 
     );
     }
