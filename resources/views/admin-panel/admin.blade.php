@@ -16,9 +16,9 @@
             </ul>
         </h1> <br>
         <ul>
-       <li> <button class="btn btn-primary">Добавить товар <a href="{{ route('admin-panel.product') }}"></a></button></li>
-      <li><button class="btn btn-primary">Удалить товар</button></li>
-       <li> <button class="btn btn-primary">Изменить  товар</button></li>
+       <li><a class="btn btn-primary" href="{{ route('create-product') }}">Добавить товар</a></li> <br>
+      <li><button class="btn btn-primary">Удалить товар</button></li> <br>
+       <li> <button class="btn btn-primary">Изменить  товар</button></li> <br>
        <li> <button class="btn btn-primary">Просмотреть все заказы</button></li>
     </ul>
       </div>

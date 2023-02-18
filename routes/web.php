@@ -23,7 +23,7 @@ Route::get('/catalog/product/{id?}', [App\Http\Controllers\CatalogController::cl
 
 Route::get('/catalog/product/detail/{id}', [App\Http\Controllers\CatalogController::class, 'detail'])->name('catalog.one-product');
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');
+Route::get('/', [App\Http\Controllers\AllController::class, 'main'])->name('main');
 
 
 
@@ -31,14 +31,18 @@ Route::middleware(['auth'])->group(function(){
 
 Route::get('/user-panel/user', [App\Http\Controllers\UserPanelController::class, 'user'])->name('user');
 
+Route::get('/basket/basket', [App\Http\Controllers\BasketController::class, 'basket'])->name('basket');
+
 });
 
 
 Route::middleware(['admin'])->group(function() {
 
-    Route::get('/admin-panel/create-product}', [App\Http\Controllers\AdminPanelController::class, 'create'])->name('admin-panel.product');
+    Route::view('/admin-panel/create-product', 'admin-panel.create-product')->name('create-product');
 
-    Route::get('/admin-panel/admin}', [App\Http\Controllers\AdminPanelController::class, 'admin'])->name('admin-panel.admin');
+    Route::post('/admin-panel/create-product', [App\Http\Controllers\AdminPanelController::class, 'create'])->name('admin-panel.create-product');
+
+    Route::get('/admin-panel/admin', [App\Http\Controllers\AdminPanelController::class, 'admin'])->name('admin-panel.admin');
 
 });
 

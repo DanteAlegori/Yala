@@ -4,11 +4,15 @@
 <div class="hero min-h-screen bg-base-200">
   <div class="hero-content text-center">
     <div class="max-w-md">
-      <h1 class="text-5xl font-bold">Мы номер №1 в России по продаже принтеров</h1>
-      <p class="py-6"> Самые выгодные цены !</p>
-      <p class="py-6">Абсолютная доставка </p>
-      <p class="py-6">5 лет гарантии </p>
-      <p class="py-6">Широкий выбор </p>
+      <h1 class="text-5xl font-bold">
+        <ul>
+            <li>Мы номер №1 в России по продаже принтеров</li> <br>
+            <li>Самые выгодные цены !</li> <br>
+            <li>Абсолютная доставка </li> <br>
+            <li>5 лет гарантии</li> <br>
+            <li>Широкий выбор </li>
+        </ul>
+     </h1>
     </div>
   </div>
 </div>
@@ -24,7 +28,7 @@
         <div class="card-body items-center text-center">
           <h2 class="card-title">{{$product->name}}</h2>
           <div class="card-actions">
-            <button class="btn btn-primary">{{$product->price}}</button>
+            <button class="btn btn-primary"><a href="{{ route('catalog.one-product', $product->id) }}">{{$product->price}}</a></button>
           </div>
         </div>
       </div>

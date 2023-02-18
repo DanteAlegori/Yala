@@ -13,8 +13,8 @@
                 Создание продукта
             </h2>
 
-            <form class="mt-10" action="{{ route('create-product') }}" method="POST">
-            @csrf
+            <form class="mt-10" action="{{ route('admin-panel.create-product') }}" enctype="multipart/form-data" method="POST" >
+             @csrf
                 <!-- Name Input -->
                 <label for="name" class="block text-xs font-semibold text-gray-600 uppercase">Название</label>
                 <input id="name" type="string" name="name" placeholder="" autocomplete="Name"
@@ -35,7 +35,7 @@
 
                  <!-- Patronymic Input -->
                  <label for="img" class="block text-xs font-semibold text-gray-600 uppercase">Название изображения</label>
-                 <input type="file" class="file-input file-input-bordered w-full max-w-xs"/>
+                 <input type="file" class="file-input file-input-bordered w-full max-w-xs" name="image"/>
 
                  <!-- Login Input -->
                  <label for="login" class="block text-xs font-semibold text-gray-600 uppercase">Цена</label>

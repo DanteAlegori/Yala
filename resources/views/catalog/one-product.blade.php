@@ -1,17 +1,16 @@
 @extends('layouts.layouts')
 
 @section('content')
-
-@foreach($products as $product)
-<div class="card card-compact w-96 bg-base-100 greei-xl bg-base-content" style=" " >
-    <figure><img src="{{asset('/img/' . $product->image)}}" alt="Shoes" /></figure>
-    <div class="card-body">
-      <h2 class="card-title text-base-100">{{$product->name}}</h2>
-      <p class="text-base-100">{{$product->content}}</p>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">{{$product->price}}<a href="">Купить</a></button>
+  <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <img src="{{asset('/img/' . $product->image)}}" class="max-w-sm rounded-lg shadow-2xl" />
+      <div>
+        <h1 class="text-5xl font-bold">{{$product->name}}</h1>
+        <p class="py-6">{{$product->content}}</p>
+        <h1 >{{$product->price}}</h1>
+        <button class="btn btn-primary"><a href="">Купить</a></button>
       </div>
     </div>
   </div>
-@endforeach
+
 @endsection

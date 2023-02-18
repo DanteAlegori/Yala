@@ -9,7 +9,7 @@
     <h2 class="card-title text-base-content">{{$product->name}}</h2>
     <p class="text-base-content">{{$product->content}}</p>
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">{{$product->price}}<a href=""></a></button>
+      <button class="btn btn-primary"><a href="{{ route('catalog.one-product', $product->id) }}">{{$product->price}}</a></button>
     </div>
   </div>
 </div>
