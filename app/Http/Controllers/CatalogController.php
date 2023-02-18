@@ -18,11 +18,11 @@ class CatalogController extends Controller
 
     }
 
-    public function slider()
+    public function about()
     {
 
-            $products = Product::limit(4)->get();
-            return view('main', compact('products'));
+            $products = Product::limit(5)->get();
+            return view('info.about-us', compact('products'));
 
     }
 

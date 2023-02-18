@@ -17,22 +17,19 @@ use App\Http\Controllers\CatalogController;
 
 Auth::routes();
 
-Route::get('/about', [App\Http\Controllers\AllController::class, 'about'])->name('about');
-
 Route::get('/where', [App\Http\Controllers\AllController::class, 'where'])->name('where');
 
 Route::get('/catalog/product/{id?}', [App\Http\Controllers\CatalogController::class, 'product'])->name('catalog.product');
 
 Route::get('/catalog/product/detail/{id}', [App\Http\Controllers\CatalogController::class, 'detail'])->name('catalog.one-product');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');
+
 
 
 Route::middleware(['auth'])->group(function(){
 
 Route::get('/user-panel/user', [App\Http\Controllers\UserPanelController::class, 'user'])->name('user');
-
-Route::get('/logout', [App\Http\Controllers\logoutController::class, 'logout'])->name('logoutProcess');
 
 });
 
@@ -44,7 +41,10 @@ Route::middleware(['admin'])->group(function() {
     Route::get('/admin-panel/admin}', [App\Http\Controllers\AdminPanelController::class, 'admin'])->name('admin-panel.admin');
 
 });
-Route::get('/slider/{id?}', [App\Http\Controllers\CatalogController::class, 'slider'])->name('main');
+
+Route::get('/logout', [App\Http\Controllers\logoutController::class, 'logout'])->name('logoutProcess');
+
+Route::get('/about/{id?}', [App\Http\Controllers\CatalogController::class, 'about'])->name('about');
 
 
 
