@@ -42,8 +42,5 @@ class CatalogController extends Controller
     }
 
 
-    public function admin()
-    {
-        return view('admin-panel.admin');
-    }
+
 }

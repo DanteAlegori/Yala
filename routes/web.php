@@ -27,13 +27,23 @@ Route::get('/catalog/product/detail/{id}', [App\Http\Controllers\CatalogControll
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/admin-panel/create-product}', [App\Http\Controllers\CatalogController::class, 'create'])->name('admin-panel.product');
 
-Route::get('/admin-panel/admin}', [App\Http\Controllers\CatalogController::class, 'admin'])->name('admin-panel.admin');
+Route::middleware(['auth'])->group(function(){
+
+Route::get('/user-panel/user', [App\Http\Controllers\UserPanelController::class, 'user'])->name('user');
 
 Route::get('/logout', [App\Http\Controllers\logoutController::class, 'logout'])->name('logoutProcess');
 
+});
 
+
+Route::middleware(['admin'])->group(function() {
+
+    Route::get('/admin-panel/create-product}', [App\Http\Controllers\AdminPanelController::class, 'create'])->name('admin-panel.product');
+
+    Route::get('/admin-panel/admin}', [App\Http\Controllers\AdminPanelController::class, 'admin'])->name('admin-panel.admin');
+
+});
 Route::get('/slider/{id?}', [App\Http\Controllers\CatalogController::class, 'slider'])->name('main');
 
 

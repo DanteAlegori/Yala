@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    protected $filable =['category_id',
+    'name',
+    'content',
+    'image',
+    'price',
+];
 }

@@ -35,7 +35,7 @@
                             @endif
                         @else
                         <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{route('user')}}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->login }}
                                 </a>
 
@@ -65,10 +65,10 @@
 
         <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
   <div class="grid grid-flow-col gap-4">
-    <a class="link link-hover">О нас</a>
-    <a class="link link-hover">Где нас найти</a>
-    <a class="link link-hover">Каталог</a>
-    <a class="link link-hover">Профиль</a>
+    <a class="link link-hover" href="{{ route('about') }}">О нас</a>
+    <a class="link link-hover" href="{{ route('where') }}">Где нас найти?</a>
+    <a class="link link-hover" href="{{ route('catalog.product') }}">Каталог</a>
+    <a class="link link-hover"href="{{ route('user') }}">Профиль</a>
   </div>
   <div>
     <div class="grid grid-flow-col gap-4">
