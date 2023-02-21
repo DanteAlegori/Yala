@@ -12,14 +12,19 @@
 </head>
 <body>
     <nav>
-    <div class="navbar bg-base-100">
+    <div class="navbar bg-base-200">
   <div class="flex-1">
     <a class="btn btn-ghost normal-case text-xl" href="{{ route('main') }}">Copy-Star</a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="{{ route('about') }}">О нас</a></li>
-      <li><a href="{{ route('where') }}">Где нас найти</a></li>
+        <li><div class="dropdown dropdown-bottom">
+            <label tabindex="0" >Информация</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a href="{{ route('about') }}">О нас</a></li>
+              <li><a href="{{ route('where') }}">Где нас найти</a></li>
+            </ul>
+          </div></li>
       <li><a href="{{ route('catalog.product') }}">Каталог</a></li>
       @guest
                             @if (Route::has('login'))

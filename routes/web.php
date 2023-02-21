@@ -38,12 +38,21 @@ Route::get('/basket/basket', [App\Http\Controllers\BasketController::class, 'bas
 
 Route::middleware(['admin'])->group(function() {
 
+    Route::get('/admin-panel/admin', [App\Http\Controllers\AdminPanelController::class, 'admin'])->name('admin-panel.admin');
+
     Route::view('/admin-panel/create-product', 'admin-panel.create-product')->name('create-product');
 
     Route::post('/admin-panel/create-product', [App\Http\Controllers\AdminPanelController::class, 'create'])->name('admin-panel.create-product');
 
-    Route::get('/admin-panel/admin', [App\Http\Controllers\AdminPanelController::class, 'admin'])->name('admin-panel.admin');
+    Route::get('/admin-panel/catalog-from-delete/{id?}', [App\Http\Controllers\AdminPanelController::class, 'catalog'])->name('admin-panel.catalog');
 
+    Route::get('/admin-panel/update-product/{id}',[App\Http\Controllers\AdminPanelController::class, 'updatePage'])->name('admin-panel.update-productt');
+
+    Route::post('/admin-panel/update-product', [App\Http\Controllers\AdminPanelController::class, 'updateProduct'])->name('admin-panel.update-product');
+
+    Route::get('/admin-panel/delete-product/{id}', [App\Http\Controllers\AdminPanelController::class, 'product'])->name('admin-panel.delete-product');
+
+    Route::get('/admin-panel/delete/{id}', [App\Http\Controllers\AdminPanelController::class, 'delete'])->name('delete');
 });
 
 Route::get('/logout', [App\Http\Controllers\logoutController::class, 'logout'])->name('logoutProcess');

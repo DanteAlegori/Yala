@@ -23,7 +23,7 @@ class CatalogController extends Controller
     public function about()
     {
 
-            $products = Product::limit(5)->get();
+            $products = Product::limit(4)->get();
             return view('info.about-us', compact('products'));
 
     }

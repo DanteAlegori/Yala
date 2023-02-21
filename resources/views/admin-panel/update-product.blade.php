@@ -10,14 +10,14 @@
 
             <!-- Card Title -->
             <h2 class="text-center font-semibold text-3xl lg:text-4xl text-gray-800">
-                Создание продукта
+               Редактирование продукта
             </h2>
 
-            <form class="mt-10" action="{{ route('admin-panel.create-product') }}" enctype="multipart/form-data" method="POST" >
+            <form class="mt-10" action="{{ route('admin-panel.update-product') }}" enctype="multipart/form-data" method="POST" >
              @csrf
                 <!-- Name Input -->
                 <label for="name" class="block text-xs font-semibold text-gray-100 uppercase">Название</label>
-                <input id="name" type="string" name="name" placeholder="" autocomplete="Name"
+                <input id="name" type="string" name="name" placeholder="{{$product->name}}" autocomplete="Name"
                     class="block w-full py-3 px-1 mt-2
                     text-gray-800 appearance-none
                     border-b-2 border-gray-000
@@ -26,7 +26,7 @@
 
                  <!--Surname Input -->
                  <label for="content" class="block text-xs font-semibold text-gray-100 uppercase">Описание</label>
-                <input id="content" type="text" name="content" placeholder="" autocomplete="content"
+                <input id="content" type="text" name="content" placeholder="{{$product->content}}" autocomplete="content"
                     class="block w-full py-3 px-1 mt-2
                     text-gray-800 appearance-none
                     border-b-2 border-gray-000
@@ -35,11 +35,12 @@
 
                  <!-- Patronymic Input -->
                  <label for="img" class="block text-xs font-semibold text-gray-600 uppercase">Название изображения</label>
+                 <img src="{{asset('/img/' . $product->image)}}" class="max-w-sm rounded-lg shadow-2xl" />
                  <input type="file" class="file-input file-input-bordered w-full max-w-xs" name="image"/>
 
                  <!-- Login Input -->
                  <label for="login" class="block text-xs font-semibold text-gray-600 uppercase">Цена</label>
-                <input id="price" type="demical" name="price" placeholder="" autocomplete="price"
+                <input id="price" type="demical" name="price" placeholder="{{$product->price}}" autocomplete="price"
                     class="block w-full py-3 px-1 mt-2
                     text-gray-800 appearance-none
                     border-b-2 border-gray-100
@@ -47,12 +48,15 @@
                     required />
 
 
+                    <input type="hidden" name="id" value="{{ $product->id }}" id="">
+
+
                 <!-- Registration Buttton -->
                 <button type="submit"
                     class="w-full py-3 mt-10 bg-gray-800 rounded-sm
                     font-medium text-white uppercase
                     focus:outline-none hover:bg-gray-700 hover:shadow-none">
-                  Создать
+                  Изменить
                 </button>
                 </div>
             </form>
